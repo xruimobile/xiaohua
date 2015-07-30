@@ -6,8 +6,10 @@ class XiaoHuaGongYi(models.Model):
     '''
     '''
     xiaohua_name = models.CharField(max_length=100, default='xiaohua')
+
     money_quota = models.CharField(max_length=20, default='0')
     money_get = models.CharField(max_length=20, default='0')
+    donate_num = models.CharField(max_length=20, default='0')
 
     xiaohua_story = models.TextField(default='')
 
