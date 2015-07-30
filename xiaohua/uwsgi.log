@@ -1,0 +1,211 @@
+*** Starting uWSGI 2.0.11.1 (64bit) on [Wed Jul 29 23:08:18 2015] ***
+compiled with version: 4.8.2 on 29 July 2015 20:52:29
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ255svh75rZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/workspace/xiaohua/xiaohua
+writing pidfile to /root/workspace/xiaohua/xiaohua/xiaohua-master.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/workspace/xiaohua
+your processes number limit is 15834
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x184c670
+The -s/--socket option is missing and stdin is not a socket.
+*** Starting uWSGI 2.0.11.1 (64bit) on [Wed Jul 29 23:09:23 2015] ***
+compiled with version: 4.8.2 on 29 July 2015 20:52:29
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ255svh75rZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/workspace/xiaohua/xiaohua
+writing pidfile to /root/workspace/xiaohua/xiaohua/xiaohua-master.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/workspace/xiaohua
+your processes number limit is 15834
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x20a9cf0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./xiaohua/wsgi.py", line 12, in <module>
+    from django.core.wsgi import get_wsgi_application
+ImportError: No module named django.core.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2096)
+spawned uWSGI worker 1 (pid: 2097, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 2097|app: -1|req: -1/1] 114.246.73.150 () {42 vars in 726 bytes} [Wed Jul 29 23:09:41 2015] GET /admin/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 2097|app: -1|req: -1/2] 114.246.73.150 () {40 vars in 647 bytes} [Wed Jul 29 23:09:42 2015] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+DAMN ! worker 1 (pid: 2097) died, killed by signal 9 :( trying respawn ...
+Respawned uWSGI worker 1 (new pid: 2118)
+Wed Jul 29 23:11:12 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.11.1 (64bit) on [Wed Jul 29 23:11:54 2015] ***
+compiled with version: 4.8.2 on 29 July 2015 20:52:29
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ255svh75rZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/workspace/xiaohua/xiaohua
+writing pidfile to /root/workspace/xiaohua/xiaohua/xiaohua-master.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/workspace/xiaohua
+your processes number limit is 15834
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8001 fd 3
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x25becf0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./xiaohua/wsgi.py", line 12, in <module>
+    from django.core.wsgi import get_wsgi_application
+ImportError: No module named django.core.wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2143)
+spawned uWSGI worker 1 (pid: 2144, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 2144|app: -1|req: -1/1] 114.246.73.150 () {42 vars in 726 bytes} [Wed Jul 29 23:11:59 2015] GET /admin/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 2144|app: -1|req: -1/2] 114.246.73.150 () {44 vars in 700 bytes} [Wed Jul 29 23:11:59 2015] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Wed Jul 29 23:12:16 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.11.1 (64bit) on [Wed Jul 29 23:13:29 2015] ***
+compiled with version: 4.8.2 on 29 July 2015 20:52:29
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ255svh75rZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/workspace/xiaohua/xiaohua
+writing pidfile to /root/workspace/xiaohua/xiaohua/xiaohua-master.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/workspace/xiaohua
+your processes number limit is 15834
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x244d800
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+ImportError: No module named wsgi
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2150)
+spawned uWSGI worker 1 (pid: 2151, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 2151|app: -1|req: -1/1] 114.246.73.150 () {42 vars in 726 bytes} [Wed Jul 29 23:14:01 2015] GET /admin/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 2151|app: -1|req: -1/2] 114.246.73.150 () {44 vars in 700 bytes} [Wed Jul 29 23:14:02 2015] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Wed Jul 29 23:19:53 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.11.1 (64bit) on [Wed Jul 29 23:19:56 2015] ***
+compiled with version: 4.8.2 on 29 July 2015 20:52:29
+os: Linux-3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014
+nodename: iZ255svh75rZ
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /root/workspace/xiaohua/xiaohua
+writing pidfile to /root/workspace/xiaohua/xiaohua/xiaohua-master.pid
+detected binary path: /usr/local/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /root/workspace/xiaohua
+your processes number limit is 15834
+your memory page size is 4096 bytes
+detected max file descriptor number: 65535
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+Python version: 2.7.6 (default, Jun 22 2015, 18:01:27)  [GCC 4.8.2]
+Set PythonHome to /root/workspace/ENV
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x21198a0
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 145520 bytes (142 KB) for 1 cores
+*** Operational MODE: single process ***
+Traceback (most recent call last):
+  File "./xiaohua/wsgi.py", line 16, in <module>
+    application = get_wsgi_application()
+  File "/root/workspace/ENV/local/lib/python2.7/site-packages/django/core/wsgi.py", line 14, in get_wsgi_application
+    django.setup()
+  File "/root/workspace/ENV/local/lib/python2.7/site-packages/django/__init__.py", line 18, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/root/workspace/ENV/local/lib/python2.7/site-packages/django/apps/registry.py", line 108, in populate
+    app_config.import_models(all_models)
+  File "/root/workspace/ENV/local/lib/python2.7/site-packages/django/apps/config.py", line 198, in import_models
+    self.models_module = import_module(models_module_name)
+  File "/usr/lib/python2.7/importlib/__init__.py", line 37, in import_module
+    __import__(name)
+  File "./gongyi/models.py", line 5
+    def GongYiItem(models)::
+                           ^
+SyntaxError: invalid syntax
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 2167)
+spawned uWSGI worker 1 (pid: 2170, cores: 1)
+--- no python application found, check your startup logs for errors ---
+[pid: 2170|app: -1|req: -1/1] 114.246.73.150 () {42 vars in 726 bytes} [Wed Jul 29 15:20:10 2015] GET /admin/ => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 2170|app: -1|req: -1/2] 114.246.73.150 () {44 vars in 700 bytes} [Wed Jul 29 15:20:10 2015] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 2170|app: -1|req: -1/3] 114.246.73.150 () {42 vars in 714 bytes} [Wed Jul 29 15:21:25 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 2170|app: -1|req: -1/4] 114.246.73.150 () {40 vars in 641 bytes} [Wed Jul 29 15:21:26 2015] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+--- no python application found, check your startup logs for errors ---
+[pid: 2170|app: -1|req: -1/5] 114.246.73.150 () {40 vars in 683 bytes} [Wed Jul 29 15:21:34 2015] GET / => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+--- no python application found, check your startup logs for errors ---
+[pid: 2170|app: -1|req: -1/6] 114.246.73.150 () {40 vars in 641 bytes} [Wed Jul 29 15:21:34 2015] GET /favicon.ico => generated 21 bytes in 0 msecs (HTTP/1.1 500) 2 headers in 83 bytes (0 switches on core 0)
+Wed Jul 29 15:24:33 2015 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
