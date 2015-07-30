@@ -14,3 +14,7 @@
 [2015-07-30 02:47:11 +0000] [2641] [INFO] Listening at: http://127.0.0.1:8001 (2641)
 [2015-07-30 02:47:11 +0000] [2641] [INFO] Using worker: sync
 [2015-07-30 02:47:11 +0000] [2646] [INFO] Booting worker with pid: 2646
+[2015-07-30 18:35:46 +0000] [5314] [INFO] Starting gunicorn 19.3.0
+[2015-07-30 18:35:46 +0000] [5314] [INFO] Listening at: http://127.0.0.1:8001 (5314)
+[2015-07-30 18:35:46 +0000] [5314] [INFO] Using worker: sync
+[2015-07-30 18:35:46 +0000] [5319] [INFO] Booting worker with pid: 5319
