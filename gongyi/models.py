@@ -14,7 +14,7 @@ class Children(models.Model):
     gender = models.IntegerField(max_length=1, default=0)
     age = models.IntegerField(max_length=3, default=0)
     icon = models.CharField(max_length=255, default='')
-    introduction = models.CharField(max_length=255, default='')
+    introduce = models.CharField(max_length=255, default='')
 
     sound_id = models.IntegerField(max_length=11, default=0)
     photo_array = models.CharField(max_length=255, default='')
