@@ -34,7 +34,7 @@ class Children(models.Model):
         timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
         file_name = str(self.child_id) + '_' + timestamp + '.jpg'
         comm = 'scp /root/workspace/xiaohua/media/' + os.path.basename(self.icon.name) \
-               + ' root@liaomeizhi:/home/liaomeizhi_www/static/images/children/' + file_name
+               + ' root@liaomeizhi.com:/home/liaomeizhi_www/static/images/children/' + file_name
         try:
             out = subprocess.check_output(comm, shell=True)
         except:
