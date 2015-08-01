@@ -15,5 +15,5 @@ class ChildDreamAdmin(admin.ModelAdmin):
                     'dream',
                     'status']
 
-admin.site.register((ChildDream, ChildDreamAdmin))
+admin.site.register(ChildDream, ChildDreamAdmin)
 admin.site.register(Children, ChildrenAdmin)
