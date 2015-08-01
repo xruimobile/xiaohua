@@ -13,6 +13,10 @@ class Children(models.Model):
     name = models.CharField(max_length=20, default='')
     gender = models.IntegerField(max_length=1, default=0)
     age = models.IntegerField(max_length=3, default=0)
+
+    school_name = models.CharField(max_length=100, default='')
+    grade_name = models.CharField(max_length=100, default='')
+
     icon = models.CharField(max_length=255, default='')
     introduce = models.CharField(max_length=255, default='')
 
