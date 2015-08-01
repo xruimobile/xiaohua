@@ -32,14 +32,14 @@ class Children(models.Model):
 
         timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
         file_name = str(self.child_id) + '_' + timestamp + '.jpg'
-        comm = 'scp /root/workspace/xiaohua/media/' + self.icon \
+        comm = 'scp /root/workspace/xiaohua/media/' + self.icon.filename \
                + ' root@liaomeizhi:/home/liaomeizhi_www/static/images/children/' + file_name
         try:
             out = subprocess.check_output(comm, shell=True)
         except:
             return u'cant scp'
 
-        self.icon = 'http://static.liaomeizhi.com/images/children/' + file_name
+        self.icon.url = 'http://static.liaomeizhi.com/images/children/' + file_name
 
         super(Children, self).save(force_insert, force_update, using, update_fields)
 
