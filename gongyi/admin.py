@@ -1,12 +1,9 @@
 from django.contrib import admin
-from gongyi.models import XiaoHuaGongYi
+from gongyi.models import Children
 
 # Register your models here.
 
-class XiaoHuaGongYiAdmin(admin.ModelAdmin):
-    list_display = ['xiaohua_name',
-                    'money_quota',
-                    'money_get',
-                    'donate_num']
+class ChildrenAdmin(admin.ModelAdmin):
+    pass
 
-admin.site.register(XiaoHuaGongYi, XiaoHuaGongYiAdmin)
+admin.site.register(Children, ChildrenAdmin)

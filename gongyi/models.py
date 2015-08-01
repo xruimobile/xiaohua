@@ -2,15 +2,20 @@ from django.db import models
 
 # Create your models here.
 
-class XiaoHuaGongYi(models.Model):
+class Children(models.Model):
     '''
+    children
     '''
-    xiaohua_name = models.CharField(max_length=100, default='xiaohua')
+    class Meta:
+        db_table = 'children'
 
-    money_quota = models.CharField(max_length=20, default='0')
-    money_get = models.CharField(max_length=20, default='0')
-    donate_num = models.CharField(max_length=20, default='0')
+    child_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20, default='')
+    gender = models.IntegerField(max_length=1, default=0)
+    age = models.IntegerField(max_length=3, default=0)
+    icon = models.CharField(max_length=255, default='')
+    introduction = models.CharField(max_length=255, default='')
 
-    xiaohua_story = models.TextField(default='')
-
-    xiaohua_pic_list = models.TextField(default='')
+    sound_id = models.IntegerField(max_length=11, default=0)
+    photo_array = models.CharField(max_length=255, default='')
+    status = models.IntegerField(max_length=1, default=0)
