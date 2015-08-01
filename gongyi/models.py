@@ -37,9 +37,9 @@ class Children(models.Model):
         try:
             out = subprocess.check_output(comm, shell=True)
         except:
-            return u'cant rm /home/chunyu/dev/internalnew/media/apk/*'
+            return u'cant scp'
 
-        self.icon = 'children/' + file_name
+        self.icon = 'http://static.liaomeizhi.com/images/children/' + file_name
 
         super(Children, self).save(force_insert, force_update, using, update_fields)
 
