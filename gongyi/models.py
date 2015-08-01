@@ -1,4 +1,6 @@
 from django.db import models
+import subprocess
+import datetime
 
 # Create your models here.
 
@@ -24,6 +26,23 @@ class Children(models.Model):
     sound_id = models.IntegerField(max_length=11, default=0)
     photo_array = models.CharField(max_length=255, default='')
     status = models.IntegerField(max_length=1, default=0)
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+
+        timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+        file_name = str(self.child_id) + '_' + timestamp + '.jpg'
+        comm = 'scp /root/workspace/xiaohua/media/' + self.icon \
+               + ' root@liaomeizhi:/home/liaomeizhi_www/static/images/children/' + file_name
+        try:
+            out = subprocess.check_output(comm, shell=True)
+        except:
+            return u'cant rm /home/chunyu/dev/internalnew/media/apk/*'
+
+        self.icon = 'children/' + file_name
+
+        super(Children, self).save(force_insert, force_update, using, update_fields)
+
 
 
 class ChildDream(models.Model):
