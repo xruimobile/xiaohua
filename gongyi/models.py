@@ -31,9 +31,11 @@ class Children(models.Model):
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
 
+        super(Children, self).save(force_insert, force_update, using, update_fields)
+
         timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
         file_name = str(self.child_id) + '_' + timestamp + '.jpg'
-        comm = 'scp /root/workspace/xiaohua/media/' + os.path.basename(self.icon.name) \
+        comm = 'scp /root/workspace/xiaohua/media/children/' + self.icon.name \
                + ' root@liaomeizhi.com:/home/liaomeizhi_www/static/images/children/' + file_name
         try:
             out = subprocess.check_output(comm, shell=True)
