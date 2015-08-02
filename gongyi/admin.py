@@ -5,6 +5,10 @@ from gongyi.models import Children, ChildDream
 # Register your models here.
 
 class ChildrenAdmin(admin.ModelAdmin):
+
+    class Media:
+        js = ("js/file_upload_editor.js", )
+
     list_display = ['name',
                     'age',
                     'icon_disable',
