@@ -6,10 +6,13 @@ from gongyi.models import Children, ChildDream
 class ChildrenAdmin(admin.ModelAdmin):
     list_display = ['name',
                     'age',
-                    'icon',
+                    'icon_disable',
                     'status']
 
     readonly_fields = ['icon_preview']
+
+    def icon_disable(self, obj):
+        return obj.icon.name
 
     def icon_preview(self, obj):
         return '<img src="%s" style="max-height:180px;max-width:320px;%s"/>' % (
