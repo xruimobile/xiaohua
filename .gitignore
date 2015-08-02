@@ -2,3 +2,5 @@
 /logs/
 *.txt
 *.sqlite3
+/gongyi/migrations/
+/media/
