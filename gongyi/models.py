@@ -31,6 +31,8 @@ class Children(models.Model):
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):
 
+        super(Children, self).save(force_insert, force_update, using, update_fields)
+
         timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
         file_name = str(self.child_id) + '_' + timestamp
         comm = 'scp /root/workspace/xiaohua/media/' + self.icon.name \
