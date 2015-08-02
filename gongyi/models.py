@@ -20,8 +20,8 @@ class Children(models.Model):
     school_name = models.CharField(max_length=100, default='')
     grade_name = models.CharField(max_length=100, default='')
 
-    #icon = models.CharField(max_length=255, default='')
-    icon = models.ImageField(upload_to='children')
+    icon = models.CharField(max_length=255, default='')
+    #icon = models.ImageField(upload_to='children')
     introduce = models.CharField(max_length=255, default='')
 
     sound_id = models.IntegerField(max_length=11, default=0)
@@ -61,4 +61,5 @@ class ChildDream(models.Model):
     dream = models.CharField(max_length=255, default='')
     dream_story = models.CharField(max_length=255, default='')
     status = models.IntegerField(max_length=1, default=1)
+
 

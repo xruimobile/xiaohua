@@ -13,13 +13,16 @@ class ChildrenAdmin(admin.ModelAdmin):
     readonly_fields = ['icon_preview']
 
     def icon_disable(self, obj):
-        return '<a href="%s" target="_blank">%s</a>' % (obj.icon.name, obj.icon.name)
+        # return '<a href="%s" target="_blank">%s</a>' % (obj.icon.name, obj.icon.name)
+        return '<a href="%s" target="_blank">%s</a>' % (obj.icon, obj.icon)
     icon_disable.short_description = 'icon'
     icon_disable.allow_tags = True
 
     def icon_preview(self, obj):
-        return '<img src="%s" style="max-height:180px;max-width:320px;%s"/>' % (
-            obj.icon.name or '', "" if obj.icon else 'display:none;')
+        # return '<img id="id_icon_preview" src="%s" style="max-height:180px;max-width:320px;%s"/>' % (
+        #     obj.icon.name or '', "" if obj.icon else 'display:none;')
+        return '<img id="id_icon_preview" src="%s" style="max-height:180px;max-width:320px;%s"/>' % (
+            obj.icon or '', "" if obj.icon else 'display:none;')
 
     icon_preview.allow_tags = True
 

@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from gongyi.views import save_file_to_liaomeizhi
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^gongyi/save_file/', save_file_to_liaomeizhi),
 ]
