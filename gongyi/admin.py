@@ -9,6 +9,15 @@ class ChildrenAdmin(admin.ModelAdmin):
                     'icon',
                     'status']
 
+    readonly_fields = ['icon_preview']
+
+    def icon_preview(self, obj):
+        return '<img src="%s" style="max-height:180px;max-width:320px;%s"/>' % (
+            obj.icon.name or '', "" if obj.image else 'display:none;')
+
+    icon_preview.allow_tags = True
+
+
 class ChildDreamAdmin(admin.ModelAdmin):
     list_display = ['child_id',
                     'donate_type',
