@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from django.contrib import admin
 from gongyi.models import Children, ChildDream
 
@@ -12,7 +13,9 @@ class ChildrenAdmin(admin.ModelAdmin):
     readonly_fields = ['icon_preview']
 
     def icon_disable(self, obj):
-        return obj.icon.name
+        return '<a href=%s>' % obj.icon.name
+    icon_disable.short_description = 'icon'
+    icon_disable.allow_tags = True
 
     def icon_preview(self, obj):
         return '<img src="%s" style="max-height:180px;max-width:320px;%s"/>' % (
