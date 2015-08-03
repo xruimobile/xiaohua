@@ -8,6 +8,9 @@ from django import forms
 from django.core.files.images import get_image_dimensions
 import datetime
 import subprocess
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
+
 
 # Create your views here.
 
@@ -26,6 +29,7 @@ class ImageForm(forms.Form):
         return picture
 
 
+@csrf_exempt
 def save_file_to_liaomeizhi(request):
     '''
     post
@@ -40,7 +44,9 @@ def save_file_to_liaomeizhi(request):
     timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
     filename = timestamp + '_' + uploaded.name
 
-    comm = 'scp ' + uploaded.temporary_file_path() + uploaded.name + \
+    local_file = default_storage.save(filename, ContentFile(uploaded.read()))
+
+    comm = 'scp /root/workspace/xiaohua/media/' + local_file + \
            ' root@liaomeizhi.com:/home/liaomeizhi_www/static/images/children/' + filename
 
     try:
