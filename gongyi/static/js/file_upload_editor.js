@@ -3,7 +3,7 @@
  */
 
 (jQuery || django.jQuery)(function ($) {
-    var image_upload = '<div class="fileupload-button"><span class="fileupload-icon"></span>上传<input type="file" id="id_image_up" multiline="multiline" class="file-input" accept="image/jpeg,image/png,image/bmp"></div>';
+    var image_upload = '<div class="fileupload-button"><span class="fileupload-icon"></span>上传<input type="file" id="id_icon_up" multiline="multiline" class="file-input" accept="image/jpeg,image/png,image/bmp"></div>';
 
     $("#id_icon").parent().append(image_upload);
     $("body").append('<div id="loading" style="display: none;"></div>');
