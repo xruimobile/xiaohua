@@ -27,7 +27,7 @@ class Children(models.Model):
     sound_id = models.IntegerField(max_length=11, default=0)
     sound_url = models.CharField(max_length=255, default='')
     sound_photo_url = models.CharField(max_length=255, default='')
-    photo_array = models.CharField(max_length=255, default='')
+    photo_array = models.TextField(default='')
     status = models.IntegerField(max_length=1, default=0)
 
     # def save(self, force_insert=False, force_update=False, using=None,
