@@ -20,7 +20,7 @@ class ChildrenAdmin(admin.ModelAdmin):
     def icon_disable(self, obj):
         # return '<a href="%s" target="_blank">%s</a>' % (obj.icon.name, obj.icon.name)
         return '<a href="%s" target="_blank">%s</a>' % (obj.icon, obj.icon)
-    icon_disable.short_description = 'icon'
+    icon_disable.short_description = '头像'
     icon_disable.allow_tags = True
 
     def icon_preview(self, obj):

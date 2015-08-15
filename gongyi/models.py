@@ -29,7 +29,7 @@ class Children(models.Model):
     sound_url = models.CharField(max_length=255, default='', verbose_name='视频链接')
     sound_photo_url = models.CharField(max_length=255, default='', verbose_name='视频图像')
     photo_array = models.TextField(default='', verbose_name='照片列表')
-    status = models.IntegerField(max_length=1, default=1, help_text='0是下线,1是上线')
+    status = models.IntegerField(max_length=1, default=1, verbose_name='上线状态', help_text='0是下线,1是上线')
 
     # def save(self, force_insert=False, force_update=False, using=None,
     #          update_fields=None):
