@@ -14,7 +14,8 @@ class ChildrenAdmin(admin.ModelAdmin):
                     'icon_disable',
                     'status']
 
-    readonly_fields = ['icon_preview']
+    readonly_fields = ['icon_preview',
+                       'sound_id']
 
     def icon_disable(self, obj):
         # return '<a href="%s" target="_blank">%s</a>' % (obj.icon.name, obj.icon.name)

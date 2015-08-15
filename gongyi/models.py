@@ -13,22 +13,22 @@ class Children(models.Model):
         db_table = 'children'
 
     child_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=20, default='')
-    gender = models.IntegerField(max_length=1, default=0)
-    age = models.IntegerField(max_length=3, default=0)
+    name = models.CharField(max_length=20, default='', verbose_name='姓名')
+    gender = models.IntegerField(max_length=1, default=0, verbose_name='性别')
+    age = models.IntegerField(max_length=3, default=0, verbose_name='年龄')
 
-    school_name = models.CharField(max_length=100, default='')
-    grade_name = models.CharField(max_length=100, default='')
+    school_name = models.CharField(max_length=100, default='', verbose_name='学校')
+    grade_name = models.CharField(max_length=100, default='', verbose_name='年级')
 
-    icon = models.CharField(max_length=255, default='')
+    icon = models.CharField(max_length=255, default='', verbose_name='头像')
     #icon = models.ImageField(upload_to='children')
-    introduce = models.CharField(max_length=255, default='')
+    introduce = models.CharField(max_length=255, default='', verbose_name='个人介绍')
 
     sound_id = models.IntegerField(max_length=11, default=0)
-    sound_url = models.CharField(max_length=255, default='')
-    sound_photo_url = models.CharField(max_length=255, default='')
-    photo_array = models.TextField(default='')
-    status = models.IntegerField(max_length=1, default=0)
+    sound_url = models.CharField(max_length=255, default='', verbose_name='视频链接')
+    sound_photo_url = models.CharField(max_length=255, default='', verbose_name='视频图像')
+    photo_array = models.TextField(default='', verbose_name='照片列表')
+    status = models.IntegerField(max_length=1, default=1, help_text='0是下线,1是上线')
 
     # def save(self, force_insert=False, force_update=False, using=None,
     #          update_fields=None):
