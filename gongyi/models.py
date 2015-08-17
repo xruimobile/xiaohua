@@ -17,7 +17,7 @@ class Children(models.Model):
 
     child_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20, default='', verbose_name='姓名')
-    gender = models.IntegerField(max_length=1, default=0, verbose_name='性别')
+    gender = models.IntegerField(max_length=1, default=0, verbose_name='性别', help_text='0是女生, 1是男生')
     age = models.IntegerField(max_length=3, default=0, verbose_name='年龄')
 
     school_name = models.CharField(max_length=100, default='', verbose_name='学校')
@@ -29,32 +29,12 @@ class Children(models.Model):
 
     sound_id = models.IntegerField(max_length=11, default=0)
     sound_url = models.CharField(max_length=255, default='', verbose_name='视频链接')
-    sound_photo_url = models.CharField(max_length=255, default='', verbose_name='视频图像')
+    sound_photo_url = models.CharField(max_length=255, default='', verbose_name='视频截图')
     photo_array = models.TextField(default='', verbose_name='照片列表')
-    status = models.IntegerField(max_length=1, default=1, verbose_name='上线状态', help_text='0是下线,1是上线')
-
+    status = models.IntegerField(max_length=1, default=0, verbose_name='上线状态', help_text='0是下线,1是上线')
 
     def __unicode__(self):
         return self.name
-
-    # def save(self, force_insert=False, force_update=False, using=None,
-    #          update_fields=None):
-    #
-    #     super(Children, self).save(force_insert, force_update, using, update_fields)
-    #
-    #     timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-    #     file_name = str(self.child_id) + '_' + timestamp
-    #     comm = 'scp /root/workspace/xiaohua/media/' + self.icon.name \
-    #            + ' root@liaomeizhi.com:/home/liaomeizhi_www/static/images/children/' + file_name
-    #     try:
-    #         out = subprocess.check_output(comm, shell=True)
-    #     except:
-    #         return u'cant scp'
-    #
-    #     self.icon.name = 'http://static.liaomeizhi.com/images/children/' + file_name
-    #
-    #     super(Children, self).save(force_insert, force_update, using, update_fields)
-
 
 
 class ChildDream(models.Model):
@@ -68,9 +48,9 @@ class ChildDream(models.Model):
 
     cdid = models.AutoField(primary_key=True)
     child = models.ForeignKey(Children, verbose_name='儿童')
-    donate_type = models.IntegerField(max_length=2, default=0, verbose_name='捐赠类型')
+    donate_type = models.IntegerField(max_length=2, default=0, verbose_name='捐赠类型', help_text='先默认是0')
     dream = models.CharField(max_length=255, default='', verbose_name='梦想')
     dream_story = models.CharField(max_length=255, default='', verbose_name='梦想故事')
-    status = models.IntegerField(max_length=1, default=1, verbose_name='上线状态', help_text='0是下线,1是上线')
+    status = models.IntegerField(max_length=1, default=0, verbose_name='上线状态', help_text='0是下线,1是上线')
 
 
