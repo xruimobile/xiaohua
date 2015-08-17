@@ -12,6 +12,8 @@ class Children(models.Model):
     '''
     class Meta:
         db_table = 'children'
+        verbose_name = '儿童信息'
+        verbose_name_plural = '儿童信息'
 
     child_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20, default='', verbose_name='姓名')
@@ -57,12 +59,14 @@ class ChildDream(models.Model):
     '''
     class Meta:
         db_table = 'shall_child_dream_record'
+        verbose_name = '心愿'
+        verbose_name_plural = '心愿'
 
     cdid = models.AutoField(primary_key=True)
-    child_id = models.IntegerField(max_length=11, default=0)
-    donate_type = models.IntegerField(max_length=2, default=0)
-    dream = models.CharField(max_length=255, default='')
-    dream_story = models.CharField(max_length=255, default='')
-    status = models.IntegerField(max_length=1, default=1)
+    child_id = models.ForeignKey(Children, verbose_name='儿童')
+    donate_type = models.IntegerField(max_length=2, default=0, verbose_name='捐赠类型')
+    dream = models.CharField(max_length=255, default='', verbose_name='梦想')
+    dream_story = models.CharField(max_length=255, default='', verbose_name='梦想故事')
+    status = models.IntegerField(max_length=1, default=1, verbose_name='上线状态', help_text='0是下线,1是上线')
 
 
