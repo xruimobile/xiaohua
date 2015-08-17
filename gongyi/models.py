@@ -33,6 +33,10 @@ class Children(models.Model):
     photo_array = models.TextField(default='', verbose_name='照片列表')
     status = models.IntegerField(max_length=1, default=1, verbose_name='上线状态', help_text='0是下线,1是上线')
 
+
+    def __unicode__(self):
+        return self.name
+
     # def save(self, force_insert=False, force_update=False, using=None,
     #          update_fields=None):
     #

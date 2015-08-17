@@ -37,6 +37,7 @@ class ChildDreamAdmin(admin.ModelAdmin):
                     'donate_type',
                     'dream',
                     'status']
+    raw_id_fields = ['child']
 
 admin.site.register(ChildDream, ChildDreamAdmin)
 admin.site.register(Children, ChildrenAdmin)
