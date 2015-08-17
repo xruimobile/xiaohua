@@ -33,6 +33,10 @@ class Children(models.Model):
     photo_array = models.TextField(default='', verbose_name='照片列表')
     status = models.IntegerField(max_length=1, default=1, verbose_name='上线状态', help_text='0是下线,1是上线')
 
+
+    def __unicode__(self):
+        return self.name
+
     # def save(self, force_insert=False, force_update=False, using=None,
     #          update_fields=None):
     #
@@ -63,7 +67,7 @@ class ChildDream(models.Model):
         verbose_name_plural = '心愿'
 
     cdid = models.AutoField(primary_key=True)
-    child_id = models.ForeignKey(Children, verbose_name='儿童')
+    child = models.ForeignKey(Children, verbose_name='儿童')
     donate_type = models.IntegerField(max_length=2, default=0, verbose_name='捐赠类型')
     dream = models.CharField(max_length=255, default='', verbose_name='梦想')
     dream_story = models.CharField(max_length=255, default='', verbose_name='梦想故事')
