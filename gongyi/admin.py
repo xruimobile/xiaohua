@@ -17,6 +17,9 @@ class ChildrenAdmin(admin.ModelAdmin):
     readonly_fields = ['icon_preview',
                        'sound_id']
 
+    actions = ['put_online',
+               'put_offline']
+
     def icon_disable(self, obj):
         return '<a href="%s" target="_blank">%s</a>' % (obj.icon, obj.icon)
     icon_disable.short_description = '头像'
@@ -29,6 +32,14 @@ class ChildrenAdmin(admin.ModelAdmin):
             obj.icon or '', "" if obj.icon else 'display:none;')
     icon_preview.short_description = '头像预览'
     icon_preview.allow_tags = True
+
+    def put_online(modeladmin, request, queryset):
+        queryset.update(status='1')
+    put_online.short_description = '上线'
+
+    def put_offline(modeladmin, request, queryset):
+        queryset.update(status='0')
+    put_offline.short_description = '下线'
 
 
 class ChildDreamAdmin(admin.ModelAdmin):
