@@ -17,6 +17,8 @@ class ChildrenAdmin(admin.ModelAdmin):
     readonly_fields = ['icon_preview',
                        'sound_id']
 
+    search_fields = ['name']
+
     actions = ['put_online',
                'put_offline']
 
@@ -47,7 +49,10 @@ class ChildDreamAdmin(admin.ModelAdmin):
                     'donate_type',
                     'dream',
                     'status']
+
     raw_id_fields = ['child']
+
+    search_fields = ['child__name']
 
     actions = ['put_online',
                'put_offline']
