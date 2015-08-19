@@ -49,5 +49,16 @@ class ChildDreamAdmin(admin.ModelAdmin):
                     'status']
     raw_id_fields = ['child']
 
+    actions = ['put_online',
+               'put_offline']
+
+    def put_online(modeladmin, request, queryset):
+        queryset.update(status='1')
+    put_online.short_description = '上线'
+
+    def put_offline(modeladmin, request, queryset):
+        queryset.update(status='0')
+    put_offline.short_description = '下线'
+
 admin.site.register(ChildDream, ChildDreamAdmin)
 admin.site.register(Children, ChildrenAdmin)
