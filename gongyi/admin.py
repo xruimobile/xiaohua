@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from django.contrib import admin
-from gongyi.models import Children, ChildDream
+from gongyi.models import Children, ChildDream, RecommendUser, UserInfo
 
 # Register your models here.
 
@@ -67,3 +67,29 @@ class ChildDreamAdmin(admin.ModelAdmin):
 
 admin.site.register(ChildDream, ChildDreamAdmin)
 admin.site.register(Children, ChildrenAdmin)
+
+
+
+class RecommendUserAdmin(admin.ModelAdmin):
+    list_display = ['uid', 'name']
+
+    def name(self, obj):
+        return UserInfo.objects.get(uid=obj.uid).name
+
+    name.short_description = '姓名'
+
+admin.site.register(RecommendUser, RecommendUserAdmin)
+
+
+class UserInfoAdmin(admin.ModelAdmin):
+    list_display = ['uid', 'name']
+    search_fields = ['name']
+    actions = ['recommend']
+    list_per_page = 30
+
+    def recommend(modeladmin, request, queryset):
+        for user in queryset:
+            RecommendUser.objects.get_or_create(uid=user.uid)
+    recommend.short_description = '推荐展示'
+
+admin.site.register(UserInfo, UserInfoAdmin)

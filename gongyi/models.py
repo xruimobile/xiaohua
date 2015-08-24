@@ -54,3 +54,30 @@ class ChildDream(models.Model):
     status = models.IntegerField(max_length=1, default=0, verbose_name='上线状态', help_text='0是下线,1是上线')
 
 
+
+class RecommendUser(models.Model):
+    """
+    recommend_user
+    """
+    class Meta:
+        db_table = 'recommend_user'
+        verbose_name = '热门推荐'
+        verbose_name_plural = '热门推荐'
+        managed = False
+
+    uid = models.IntegerField(verbose_name='标识')
+    last_updated = models.DateTimeField(auto_now=True, db_column='time')
+
+
+class UserInfo(models.Model):
+    """
+    user
+    """
+    class Meta:
+        db_table = 'user'
+        verbose_name = '用户'
+        verbose_name_plural = '用户'
+        managed = False
+
+    uid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length='128', default='')

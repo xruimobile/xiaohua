@@ -85,7 +85,7 @@ DATABASES = {
 
     'default': { # mysql
         'ENGINE': 'django.db.backends.mysql', #设置为mysql数据库
-        'NAME': 'liaomeizhi_db_prod_check',  #mysql数据库名
+        'NAME': 'liaomeizhi_db_prod',  #mysql数据库名
         'USER': 'liaomeizhi_api',  #mysql用户名，留空则默认为当前linux用户名
         'PASSWORD': 'liaomeizhi2013NX',   #mysql密码
         'HOST': 'liaomeizhi.com',  #留空默认为localhost
